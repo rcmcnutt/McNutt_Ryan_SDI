@@ -15,3 +15,7 @@ alert("What follows is information on my Twitter account."); //another alert abo
 document.write ("It's " + hasMedia + ", I have a Twitter account." + "<br \>" ); //output information on index.html
 document.write (" My Twitter handle is " + twitter + "." + "<br \>"); //output information on index.html
 document.write (" Currently I have " + numFollowers + " followers, and I'm currently following " + whoIFollow + " users."); //output more information on index.html
+
+console.log ("It's " + hasMedia + ", I have a Twitter account." ); //displays information in console
+console.log (" My Twitter handle is " + twitter + "."); //displays information in console
+console.log (" Currently I have " + numFollowers + " followers, and I'm currently following " + whoIFollow + " users."); //displays information in console
