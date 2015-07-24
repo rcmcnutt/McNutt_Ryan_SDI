@@ -46,8 +46,10 @@ if (subMember === true) {
     alert("Your current discount is at " + discountPercent + "% off new comics!"); //displays the discount to the user
 
     var discountSubTotal = (comicNumber * comicPrice); //multiples the number of comics by the cost of the comics
-    var discountTotal = discountSubTotal - (discountSubTotal * discountPercent); //subtracts discountSubTotal from the value inside the ()'s
+    var discountAmount = (discountSubTotal * discountPercent); //multiples the discount amount by discountSubtotal
+    var discountTotal = discountSubTotal - discountAmount; //subtracts discountSubTotal from the value inside the ()'s
     alert("Your total is " + (discountTotal.toFixed(2)) + "."); //displays the total amount for comics and discount
+    alert("You saved " + discountAmount + " today!"); //shows the customer the total savings
 
 }else{
 
@@ -56,8 +58,3 @@ if (subMember === true) {
 }
 
 alert("Thank you for shopping at Daily Bugle Comics!"); //thanks the customer for shopping with the store
-
-
-
-
-
