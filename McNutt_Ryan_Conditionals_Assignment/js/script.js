@@ -10,8 +10,6 @@ Time to buy some comics!
 
 
 var comicPrice = 2.99;  //price of new comics
-var bagPrice = 0.05;    //price of 1 single bag
-var boardPrice = 0.05;  //price of 1 single board
 var lowDiscountPrice = 0.1;   //discount for 1-10 subscriptions
 var medDiscountPrice = 0.15;  //discount for 11-30 subscriptions
 var highDiscountPrice = 0.2;  //discount for 31+ subscriptions
@@ -31,30 +29,33 @@ var memberOutput = (subMember) ? "Thank you for being a member!" : "Becoming a m
 alert(memberOutput); //displays result of member variable
 
 var comicNumber = Number(prompt("How many comics will you be purchasing today?")); //asks and stores the amount of comics being purchased
+var discountPercent;
 
-if (subMember === true){
+if (subMember === true) {
 
     var subNumber = Number(prompt("How many subscriptions do you currently have with Daily Bugle Comics?")); //asks and stores amount of subscriptions the user has
 
-    if(subNumber <= 10){
-    alert("Your current discount is at 10% off new comics!");    //displays the amount of discount based on var subNumber
-
-    }else if(subNumber > 10 && subNumber <= 30){
-    alert("Your current discount is at 15% off new comics!");    //displays the amount of discount based on var subNumber
-
-    }else if(subNumber > 30){
-    alert("Your Current discount is at 20% off new comics!");    //displays the amount of discount based on var subNumber
-
-    }else{
-    alert(customerName + " You are missing out on a savings of up to 20%!"); //alerts user about missing savings because they aren't a member
+    if(subNumber <= 10) {
+        discountPercent = lowDiscountPrice; //puts a value to discountPercent
+    }else if(subNumber > 10 && subNumber <= 30) {
+        discountPercent = medDiscountPrice; //puts a value to discountPercent
+    }else if(subNumber > 30) {
+        discountPercent = highDiscountPrice; //puts a value to discountPercent
     }
 
-}else {
+    alert("Your current discount is at " + discountPercent + "% off new comics!"); //displays the discount to the user
+
+    var discountSubTotal = (comicNumber * comicPrice); //multiples the number of comics by the cost of the comics
+    var discountTotal = discountSubTotal - (discountSubTotal * discountPercent); //subtracts discountSubTotal from the value inside the ()'s
+    alert("Your total is " + (discountTotal.toFixed(2)) + "."); //displays the total amount for comics and discount
+
+}else{
 
     var subTotal = (comicNumber * comicPrice); //multiples the number of comics by the cost of the comics
     alert("Your total is " + (subTotal.toFixed(2)) + "."); //testing math on number of comics * the price of comics
 }
 
+alert("Thank you for shopping at Daily Bugle Comics!");
 
 
 
