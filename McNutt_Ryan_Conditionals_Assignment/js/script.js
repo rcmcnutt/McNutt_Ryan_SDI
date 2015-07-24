@@ -49,7 +49,7 @@ if (subMember === true) {
     var discountAmount = (discountSubTotal * discountPercent); //multiples the discount amount by discountSubtotal
     var discountTotal = discountSubTotal - discountAmount; //subtracts discountSubTotal from the value inside the ()'s
     alert("Your total is " + (discountTotal.toFixed(2)) + "."); //displays the total amount for comics and discount
-    alert("You saved " + discountAmount + " today!"); //shows the customer the total savings
+    alert("You saved " + (discountAmount.toFixed(2)) + " today!"); //shows the customer the total savings
 
 }else{
 
