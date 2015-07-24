@@ -43,7 +43,7 @@ if (subMember === true) {
         discountPercent = highDiscountPrice; //puts a value to discountPercent
     }
 
-    alert("Your current discount is at " + discountPercent + "% off new comics!"); //displays the discount to the user
+    alert("Your current discount is at " + (discountPercent * 100) + "% off new comics!");  //displays the discount to the user
 
     var discountSubTotal = (comicNumber * comicPrice); //multiples the number of comics by the cost of the comics
     var discountAmount = (discountSubTotal * discountPercent); //multiples the discount amount by discountSubtotal
