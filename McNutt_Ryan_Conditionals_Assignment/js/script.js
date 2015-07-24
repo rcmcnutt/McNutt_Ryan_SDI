@@ -55,7 +55,7 @@ if (subMember === true) {
     alert("Your total is " + (subTotal.toFixed(2)) + "."); //testing math on number of comics * the price of comics
 }
 
-alert("Thank you for shopping at Daily Bugle Comics!");
+alert("Thank you for shopping at Daily Bugle Comics!"); //thanks the customer for shopping with the store
 
 
 
