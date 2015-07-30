@@ -19,12 +19,12 @@ var lottoPower; //sets a var lottoPower
 //lotto functions (Name, PowerBall and Normal FL Lotto)
 function userCheck(name){ //sets up the function userCheck
 
-    while (name === "" || name === null){ //checks that a name was inserted by user //**look into why it generates null as a name**
+    while (name === "" || name === null){ //checks that a name was inserted by user 
         name = prompt("Section blank, Enter your First Name please:"); //if blank, prompts user for name again
 
     }
 
-    console.log("Thank you " + name + "."); //displays information in the console for the user
+    return name; //returns the information for name outside of the function
 
 }
 
@@ -38,7 +38,8 @@ function powLottery(){
 
 //main code (call functions and global variables)
 userName = prompt("Welcome to the Florida Lottery,\n Please enter your First Name:"); //collects users name
-userCheck(userName); //calls the function userCheck
+userName = userCheck(userName); //calls the function userCheck
+console.log("Thank you " + userName + "."); //displays information in the console for the user
 
 lottoNorm = confirm("So " + userName + ", are you checking the \n Florida Lottery numbers? \n (OK for Yes, Cancel for No)"); //checks what version of the lotto user would like to display
 
