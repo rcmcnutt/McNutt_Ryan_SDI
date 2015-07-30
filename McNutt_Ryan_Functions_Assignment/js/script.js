@@ -28,6 +28,14 @@ function userCheck(name){ //sets up the function userCheck
 
 }
 
+function normLottery(){
+
+}
+
+function powLottery(){
+
+}
+
 //main code (call functions and global variables)
 userName = prompt("Welcome to the Florida Lottery,\n Please enter your First Name:"); //collects users name
 userCheck(userName); //calls the function userCheck
