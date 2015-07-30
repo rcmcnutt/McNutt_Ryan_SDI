@@ -8,8 +8,12 @@
 
 //alert("this is to test my connection between my index.html file and my script.js file.") //testing file setup
 
+
+//global variables (don't use in functions)
 var userName = prompt("Welcome to the Florida Lottery,\n Please enter your first name:"); //collects users name
 
+
+//lotto functions (PowerBall and Normal FL Lotto)
 function userCheck(name){ //sets up the function userCheck
 
     var leftBlank=1; //keeps count of the times the name section is left blank
@@ -25,4 +29,6 @@ function userCheck(name){ //sets up the function userCheck
 
     console.log("Thanks for stopping by " + name + "."); //displays information in the console for the user
 }
+
+//main code (call functions and global variables)
 userCheck(userName); //calls the function userCheck
