@@ -62,19 +62,13 @@ function powLottery(num){ //function for generating 5 random lottery numbers bet
 
 }
 
-function powerBall(num){ //function for generating a Powerball between 1-35
-    var pool = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
-        19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35]; //list of possible numbers
-    var ballArray = []; //stores value for the picked number
-
-    for (var b = 0; b < num; b++){ //keeps track of how many numbers are pulled
-
-        var index = Math.floor(Math.random() * pool.length); //picks a random array index
-        ballArray[b] = pool[index]; //get the number at that index
-
+function powerBall(min, max, num){ //function for generating a random number between 1-35
+    var ballArray = []; //placeholder for the random number
+    for (var b = 0; b < num; b++) { //counter to make sure it runs once
+        var randomNum = Math.random() * (max - min) + min;
+        ballArray[b] = Math.round(randomNum);
     }
-
-    return ballArray; //returns picked numbers outside the function
+    return ballArray;
 
 }
 
@@ -96,7 +90,7 @@ if (lottoNorm === true) { //sets up an if statement for the type of lottery numb
     if (lottoPower === true) { //sets up an if statment for the type of lottery numbers the user is checking
         console.log ("Thank you for playing the Powerball Lottery " + userName + ", \n Here are the winning numbers."); //outputs a thank you message
         powRandom = powLottery(5); //calls function powLottery with parameters
-        pBall = powerBall(1); //calls function powerBall with parameters
+        pBall = powerBall(1, 35, 1); //calls function powerBall with parameters
         console.log("The winning numbers are: " + powRandom[0] + ", " + powRandom[1] + ", " + powRandom[2] + ", " + powRandom[3] + ", " + powRandom[4] + "."); //displays function output
         console.log ("And a Powerball of: " + pBall[0] + "." ); //displays function output
     }else{
