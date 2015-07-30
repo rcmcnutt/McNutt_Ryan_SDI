@@ -15,9 +15,12 @@
 var userName; //sets a var userName
 var lottoNorm; //sets a var lottoNorm
 var lottoPower; //sets a var lottoPower
+var normRandom; //sets a var normRandom
+var powRandom; //sets a var powRandom
+var pBall; //sets a var pBall
 
 
-//lotto functions (Name, PowerBall, and Normal FL Lotto)
+//lotto functions (Name, Powerball, and Normal FL Lotto)
 
 function userCheck(name){ //sets up the function userCheck
 
@@ -30,11 +33,33 @@ function userCheck(name){ //sets up the function userCheck
 
 }
 
-function normLottery(){ //function for generating 6 random lottery numbers between 1-53
+function normLottery(min, max, num){ //function for generating 6 random lottery numbers between 1-53
+    var normArray = [];
+    for (var n = 0; n < num; n++) {
+        var randomNum = Math.random() * (max - min) + min;
+        normArray[n] = Math.round(randomNum);
+    }
+    return normArray;
 
 }
 
-function powLottery(){ //function for generating 5 random lottery numbers between 1-59 and a Powerball between 1-35
+function powLottery(min, max, num){ //function for generating 5 random lottery numbers between 1-59
+    var normArray = [];
+    for (var p = 0; p < num; p++) {
+        var randomNum = Math.random() * (max - min) + min;
+        normArray[p] = Math.round(randomNum);
+    }
+    return normArray;
+
+}
+
+function powerBall(min, max, num){ //function for generating a Powerball between 1-35
+    var normArray = [];
+    for (var b = 0; b < num; b++) {
+        var randomNum = Math.random() * (max - min) + min;
+        normArray[b] = Math.round(randomNum);
+    }
+    return normArray;
 
 }
 
@@ -48,12 +73,17 @@ lottoNorm = confirm("So " + userName + ", are you checking the \n Florida Lotter
 
 if (lottoNorm === true) { //sets up an if statement for the type of lottery numbers the user is checking.
     console.log ("Thank you for playing the Florida Lottery " + userName + ", \n Here are the winning numbers."); //outputs a thank you message
-
+    normRandom = normLottery(1, 53, 6); //calls function normLottery with parameters
+    console.log (normRandom); //displays function output
 }else{
 
     lottoPower = confirm("So you checking the \n Powerball Lottery Numbers? \n (OK for Yes, Cancel for No)"); //checks what version of the lotto user would like to display
     if (lottoPower === true) { //sets up an if statment for the type of lottery numbers the user is checking
-        console.log ("Thank you for playing the PowerBall Lottery " + userName + ", \n Here are the winning numbers."); //outputs a thank you message
+        console.log ("Thank you for playing the Powerball Lottery " + userName + ", \n Here are the winning numbers."); //outputs a thank you message
+        powRandom = powLottery(1, 59, 5); //calls function powLottery with parameters
+        pBall = powerBall(1, 35, 1); //calls function powerBall
+        console.log (powRandom);
+        console.log (pBall);
     }else{
         alert("Please refresh the page and try again."); //fail safe alert so user can try again to find numbers
     }
