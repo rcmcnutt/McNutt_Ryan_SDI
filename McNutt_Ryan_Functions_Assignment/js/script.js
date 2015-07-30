@@ -11,7 +11,6 @@
 
 //global variables (don't use in functions)
 
-"use strict";
 var userName; //sets a var userName
 var lottoNorm; //sets a var lottoNorm
 var lottoPower; //sets a var lottoPower
@@ -90,7 +89,7 @@ lottoNorm = confirm("So " + userName + ", are you checking the \n Florida Lotter
 if (lottoNorm === true) { //sets up an if statement for the type of lottery numbers the user is checking.
     console.log ("Thank you for playing the Florida Lottery " + userName + ", \n Here are the winning numbers."); //outputs a thank you message
     normRandom = normLottery(6); //calls function normLottery with parameters
-    console.log (normRandom); //displays function output
+    console.log("The winning numbers are: " + normRandom[0] + ", " + normRandom[1] + ", " + normRandom[2] + ", " + normRandom[3] + ", " + normRandom[4] + ", and finally, " + normRandom[5]); //displays function output
 }else{
 
     lottoPower = confirm("So you checking the \n Powerball Lottery Numbers? \n (OK for Yes, Cancel for No)"); //checks what version of the lotto user would like to display
@@ -98,8 +97,8 @@ if (lottoNorm === true) { //sets up an if statement for the type of lottery numb
         console.log ("Thank you for playing the Powerball Lottery " + userName + ", \n Here are the winning numbers."); //outputs a thank you message
         powRandom = powLottery(5); //calls function powLottery with parameters
         pBall = powerBall(1); //calls function powerBall with parameters
-        console.log (powRandom); //displays function output
-        console.log (pBall); //displays function output
+        console.log("The winning numbers are: " + powRandom[0] + ", " + powRandom[1] + ", " + powRandom[2] + ", " + powRandom[3] + ", " + powRandom[4] + "."); //displays function output
+        console.log ("And a Powerball of: " + pBall[0] + "." ); //displays function output
     }else{
         alert("Please refresh the page and try again."); //fail safe alert so user can try again to find numbers
     }
