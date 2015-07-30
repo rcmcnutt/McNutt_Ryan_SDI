@@ -50,32 +50,32 @@ function normLottery(num){ //function for generating 6 random lottery numbers be
 
 function powLottery(num){ //function for generating 5 random lottery numbers between 1-59
     var pool = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59]; //list of possiable numbers
-    var normArray = []; //stores values for picked numbers
+    var powArray = []; //stores values for picked numbers
 
     for (var p = 0; p < num; p++) { //keeps track of how many numbers are pulled
 
         var index = Math.floor(Math.random() * pool.length); //picks a random array index
-        normArray[p] = pool[index]; //get the number at that index
+        powArray[p] = pool[index]; //get the number at that index
         pool.splice(index, 1); //remove index location from the pool
     }
 
-    return normArray; //returns picked numbers outside the function
+    return powArray; //returns picked numbers outside the function
 
 }
 
 function powerBall(num){ //function for generating a Powerball between 1-35
     var pool = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
         19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35]; //list of possible numbers
-    var normArray = []; //stores value for the picked number
+    var ballArray = []; //stores value for the picked number
 
     for (var b = 0; b < num; b++){ //keeps track of how many numbers are pulled
 
         var index = Math.floor(Math.random() * pool.length); //picks a random array index
-        normArray[b] = pool[index]; //get the number at that index
+        ballArray[b] = pool[index]; //get the number at that index
 
     }
 
-    return normArray; //returns picked numbers outside the function
+    return ballArray; //returns picked numbers outside the function
 
 }
 
@@ -97,9 +97,9 @@ if (lottoNorm === true) { //sets up an if statement for the type of lottery numb
     if (lottoPower === true) { //sets up an if statment for the type of lottery numbers the user is checking
         console.log ("Thank you for playing the Powerball Lottery " + userName + ", \n Here are the winning numbers."); //outputs a thank you message
         powRandom = powLottery(5); //calls function powLottery with parameters
-        pBall = powerBall(1); //calls function powerBall
-        console.log (powRandom);
-        console.log (pBall);
+        pBall = powerBall(1); //calls function powerBall with parameters
+        console.log (powRandom); //displays function output
+        console.log (pBall); //displays function output
     }else{
         alert("Please refresh the page and try again."); //fail safe alert so user can try again to find numbers
     }
