@@ -33,7 +33,7 @@ function userCheck(name){ //sets up the function userCheck
 }
 
 function normLottery(num){ //function for generating 6 random lottery numbers between 1-53
-    var pool = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34,  35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53]; //list of possiable numbers
+    var pool = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34,  35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53]; //list of possible numbers
     var normArray = []; //stores values for picked numbers
 
     for (var n = 0; n < num; n++) { //keeps track of how many numbers are pulled
@@ -48,7 +48,7 @@ function normLottery(num){ //function for generating 6 random lottery numbers be
 }
 
 function powLottery(num){ //function for generating 5 random lottery numbers between 1-59
-    var pool = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59]; //list of possiable numbers
+    var pool = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59]; //list of possible numbers
     var powArray = []; //stores values for picked numbers
 
     for (var p = 0; p < num; p++) { //keeps track of how many numbers are pulled
